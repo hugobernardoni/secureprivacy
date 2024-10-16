@@ -11,7 +11,7 @@ You must have *docker* installed on your operating system (Linux, Windows or Mac
 # Steps to run the application
 
 ### Run the command:
-- ` docker-compose -f ./Backend/docker-compose.yml up --build` 
+- ` docker-compose -f ./Backend/SecurePrivacy/docker-compose.yml up --build` 
 
 ### After, access http://localhost:4200 into a web-browser and start to using the **System**.
 
@@ -28,11 +28,11 @@ Write a C# function to evaluate binary strings based on specific criteria
 ## Description
  1. Thefunction accepts a binary string as input.
  2. Check if the binary string is 'good' based on these conditions:
-   ● Equalnumberof0's and 1's.
+   ● Equal number of 0's and 1's.
    ● Forevery prefix, the number of 1's is not less than the number of 0's.
 
 ## Requirements
-You must *.net 8* installed on your operating system
+You must *.net 8* installed on your operating system and:
 
 ### Run the command for .net8:
 - `cd Backend\SecurePrivacy\Test`
