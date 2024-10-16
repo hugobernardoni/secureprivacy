@@ -1,0 +1,56 @@
+version: '3.7'
+
+networks:
+  network:
+    driver: bridge
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: API/Dockerfile
+    ports:
+      - "8081:8080"  # Porta 5000 no host, mapeada para a 8080 no container
+    networks:
+      - network
+    depends_on:
+      - mongo
+    environment:
+      - ASPNETCORE_URLS=http://+:8080  # Garante que a API escute na porta 8080
+      - MongoDb__ConnectionString=mongodb://mongo:27017
+      - MongoDb__DatabaseName=API-DB
+      - ASPNETCORE_ENVIRONMENT=Development 
+
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"  # Porta do MongoDB no host e no container
+    environment:
+      MONGO_INITDB_DATABASE: API-DB
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - network
+  client:
+    build:
+      context: ../../Frontend/SecurePrivacy
+      dockerfile: Dockerfile
+    depends_on: 
+      - api
+    networks:
+      - network      
+    ports:
+      - "4200:80"
+    
+  proxy:
+    build: 
+      context: ../../nginx-proxy
+      dockerfile: Dockerfile
+    ports: 
+      - "8200:80"
+    networks:
+      - network      
+    restart: always
+    
+volumes:
+  mongo-data:

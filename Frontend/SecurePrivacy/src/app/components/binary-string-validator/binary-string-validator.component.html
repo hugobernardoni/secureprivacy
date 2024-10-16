@@ -1,0 +1,11 @@
+<div class="container">
+    <h2>Binary String Validator</h2>
+    <form (ngSubmit)="validateBinaryString()">
+        <label for="binaryString">Enter Binary String</label>
+        <input type="text" id="binaryString" [(ngModel)]="binaryString" name="binaryString" required>
+        
+        <button type="submit">Validate</button>
+        
+        <div *ngIf="validationMessage" class="validation-message">{{ validationMessage }}</div>
+    </form>
+</div>

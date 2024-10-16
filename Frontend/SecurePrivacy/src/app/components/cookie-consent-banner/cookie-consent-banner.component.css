@@ -1,0 +1,19 @@
+.cookie-banner {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .actions {
+    margin-top: 10px;
+  }
+  
+  .actions button {
+    margin: 0 10px;
+    padding: 5px 15px;
+  }
+  
