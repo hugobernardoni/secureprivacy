@@ -18,28 +18,33 @@ You must have *docker* installed on your operating system (Linux, Windows or Mac
 
 # Features included
 
-- Cookies consent
-- Grud for a product
-- Test button to task2
+- Cookie Consent: The application requests consent for the use of cookies.
+- CRUD for Product: Interface to create, read, update, and delete products.
+- Test Button: Access Task 2 through the test button.
 
 ## Description for Task 2
-Write a C# function to evaluate binary strings based on specific criteria
+Write a C# function to evaluate binary strings based on specific criteria.
 
-## Description
- 1. Thefunction accepts a binary string as input.
- 2. Check if the binary string is 'good' based on these conditions:
-   ● Equal number of 0's and 1's.
-   ● Forevery prefix, the number of 1's is not less than the number of 0's.
+## Evaluation Criteria for Task 2
+The function accepts a binary string as input and checks if it is 'good' based on the following criteria:
+
+Equal number of 0's and 1's.
+For every prefix, the number of 1's is not less than the number of 0's.
 
 ## Requirements
-You must *.net 8* installed on your operating system and:
+You must *.net 8* installed on your operating system:
 
-### Run the command for .net8:
+# Steps to to run the tests
+To run the tests for Task 2:
+
+### Run the command:
+1. Navigate to the directory:
 - `cd Backend\SecurePrivacy\Test`
+2. Run the tests with:
 - `dotnet test`
 
-Or you can using the swagger 
-http://localhost:8081/swagger/index.html
-and call the binary post
+Alternatively, you can use Swagger (if you started Task 1 earlier):
 
-Or you can use directly the frontend in the test Binary button.
+● Access http://localhost:8081/swagger/index.html and make calls to the API.
+
+● Use directly the frontend in the test Binary button.
